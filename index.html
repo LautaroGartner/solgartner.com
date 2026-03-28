@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soledad Gartner · Abogada</title>
+<meta name="description" content="Abogada especializada en derecho previsional. Asesoramiento en jubilaciones, UCAP de ANSES y trámites previsionales. Crespo, Entre Ríos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #DBBE6A;
+    --gold-pale: #F0DDA0;
+    --black: #0A0A0A;
+    --black-soft: #141414;
+    --black-card: #1A1A1A;
+    --gray-dark: #2A2A2A;
+    --gray: #888;
+    --gray-light: #BBB;
+    --white: #F5F0E8;
+    --white-pure: #FFFFFF;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Outfit', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    transition: background 0.3s;
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .nav-brand svg { width: 28px; height: 28px; }
+
+  .nav-brand span {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+
+  .nav-links a {
+    color: var(--gray-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 8px 20px;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--black);
+  }
+
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background: var(--gold);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background: var(--gold);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 75% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-lines {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-lines::before,
+  .hero-lines::after {
+    content: '';
+    position: absolute;
+    background: linear-gradient(180deg, transparent, rgba(201,168,76,0.08), transparent);
+  }
+
+  .hero-lines::before {
+    width: 1px;
+    height: 100%;
+    left: 20%;
+    top: 0;
+  }
+
+  .hero-lines::after {
+    width: 1px;
+    height: 100%;
+    right: 25%;
+    top: 0;
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-text { animation: fadeUp 1s ease-out; }
+
+  .hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hero-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: var(--white);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--gray-light);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--black);
+    padding: 14px 32px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.2);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--white);
+    padding: 14px 32px;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--gray-dark);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* Hero visual - decorative balance/justice element */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp 1s ease-out 0.2s both;
+  }
+
+  .hero-emblem {
+    width: 320px;
+    height: 320px;
+    position: relative;
+  }
+
+  .hero-emblem svg { width: 100%; height: 100%; }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 100px 24px; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .section-subtitle {
+    color: var(--gray-light);
+    font-size: 1rem;
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  /* ── ABOUT ── */
+  #sobre-mi {
+    background: var(--black-soft);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-quote {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold-light);
+    line-height: 1.5;
+    margin-bottom: 32px;
+    padding-left: 24px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .about-text {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 24px 16px;
+    border: 1px solid var(--gray-dark);
+    position: relative;
+  }
+
+  .stat::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .stat-number {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── SERVICES ── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: var(--black-card);
+    border: 1px solid var(--gray-dark);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s;
+  }
+
+  .service-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    color: var(--gold);
+  }
+
+  .service-name {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .service-desc {
+    color: var(--gray);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  /* ── UCAP HIGHLIGHT ── */
+  .ucap-section {
+    background: var(--black-soft);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ucap-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.05), transparent 70%);
+    pointer-events: none;
+  }
+
+  .ucap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .ucap-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.25);
+    color: var(--gold);
+    padding: 6px 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .ucap-title {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .ucap-text {
+    color: var(--gray-light);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .ucap-list {
+    list-style: none;
+    margin-top: 24px;
+  }
+
+  .ucap-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gray-dark);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--gray-light);
+    font-size: 0.9rem;
+  }
+
+  .ucap-list li svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--gold);
+  }
+
+  /* ── PROCESS ── */
+  .how-timeline {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .how-step {
+    padding: 40px;
+    position: relative;
+    border: 1px solid rgba(201,168,76,0.1);
+    transition: background 0.3s;
+  }
+
+  .how-step:hover { background: rgba(201,168,76,0.03); }
+
+  .how-num {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    color: var(--gold);
+    opacity: 0.2;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .how-step h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .how-step p {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.7;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    overflow: hidden;
+    background: var(--black-soft);
+  }
+
+  .marquee {
+    display: flex;
+    gap: 48px;
+    animation: marqueeScroll 18s linear infinite;
+    width: max-content;
+  }
+
+  .marquee span {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .marquee span::after {
+    content: '◆';
+    font-size: 0.35rem;
+    color: var(--gold);
+  }
+
+  @keyframes marqueeScroll {
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── CONTACT ── */
+  #contacto {
+    background: var(--black-soft);
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--gray-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+
+  .contact-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+    color: var(--white);
+  }
+
+  .contact-value a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-value a:hover { color: var(--gold); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row { display: flex; gap: 16px; }
+  .form-row > * { flex: 1; }
+
+  .contact-form input,
+  .contact-form textarea {
+    background: var(--black);
+    border: 1px solid var(--gray-dark);
+    color: var(--white);
+    padding: 14px 16px;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 100%;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: var(--gray);
+  }
+
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .contact-form button {
+    align-self: flex-start;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 24px;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    text-align: center;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    color: var(--gray);
+    font-size: 0.8rem;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 16px;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--gray-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .footer-social a:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── WA FLOAT ── */
+  .wa-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 99;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+    transition: transform 0.3s;
+    text-decoration: none;
+  }
+
+  .wa-float:hover { transform: scale(1.1); }
+  .wa-float svg { width: 28px; height: 28px; fill: #fff; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 968px) {
+    .nav-links { display: none; }
+    .nav-cta-desktop { display: none; }
+    .hamburger { display: block; }
+
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 72px;
+      left: 0; right: 0;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(20px);
+      padding: 24px;
+      gap: 20px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .hero-desc { margin-left: auto; margin-right: auto; }
+    .hero-actions { justify-content: center; }
+    .hero-visual { order: -1; }
+    .hero-emblem { width: 200px; height: 200px; }
+
+    .about-grid,
+    .ucap-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .how-timeline {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-stats {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .form-row { flex-direction: column; }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .how-timeline { grid-template-columns: 1fr; }
+    section { padding: 60px 16px; }
+    .hero h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4L22 14H18L20 4Z" fill="#C9A84C"/>
+        <circle cx="20" cy="16" r="2.5" fill="#C9A84C"/>
+        <line x1="10" y1="18" x2="30" y2="18" stroke="#C9A84C" stroke-width="1.5"/>
+        <path d="M10 18L7 26H17L14 18" stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <path d="M30 18L27 26H23L26 18" stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <path d="M7 26Q12 28 17 26" stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <path d="M23 26Q25 28 27 26" stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <line x1="20" y1="18" x2="20" y2="32" stroke="#C9A84C" stroke-width="1.5"/>
+        <line x1="14" y1="32" x2="26" y2="32" stroke="#C9A84C" stroke-width="1.5"/>
+      </svg>
+      <span>Soledad Gartner</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#ucap">UCAP</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/543435020384" class="nav-cta nav-cta-desktop">Consultá ahora</a>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-label">Abogada · Crespo, Entre Ríos</div>
+      <h1>Tu futuro previsional merece <em>asesoramiento experto</em></h1>
+      <p class="hero-desc">Especializada en jubilaciones, UCAP de ANSES y trámites previsionales. Te acompaño en cada paso para que accedas al beneficio que te corresponde.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/543435020384?text=Hola%20Sol,%20quiero%20consultar%20sobre%20mi%20situación%20previsional" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Agendá tu consulta
+        </a>
+        <a href="#servicios" class="btn-secondary">Conocé mis servicios</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-emblem">
+        <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer decorative ring -->
+          <circle cx="160" cy="160" r="155" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+          <circle cx="160" cy="160" r="130" stroke="rgba(201,168,76,0.1)" stroke-width="0.5"/>
+          <!-- Corner diamonds -->
+          <path d="M160 10L165 20L160 30L155 20Z" fill="rgba(201,168,76,0.3)"/>
+          <path d="M160 290L165 300L160 310L155 300Z" fill="rgba(201,168,76,0.3)"/>
+          <!-- Scale of justice -->
+          <line x1="160" y1="70" x2="160" y2="240" stroke="#C9A84C" stroke-width="1.5"/>
+          <circle cx="160" cy="100" r="6" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+          <line x1="100" y1="110" x2="220" y2="110" stroke="#C9A84C" stroke-width="1.5"/>
+          <!-- Left plate with chain -->
+          <line x1="100" y1="110" x2="90" y2="150" stroke="#C9A84C" stroke-width="1"/>
+          <line x1="100" y1="110" x2="110" y2="150" stroke="#C9A84C" stroke-width="1"/>
+          <path d="M80 150Q95 160 110 150" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+          <path d="M80 150Q95 155 110 150" fill="rgba(201,168,76,0.1)"/>
+          <!-- Right plate with chain -->
+          <line x1="220" y1="110" x2="210" y2="150" stroke="#C9A84C" stroke-width="1"/>
+          <line x1="220" y1="110" x2="230" y2="150" stroke="#C9A84C" stroke-width="1"/>
+          <path d="M210 150Q220 160 230 150" stroke="#C9A84C" stroke-width="1.5" fill="none"/>
+          <path d="M210 150Q220 155 230 150" fill="rgba(201,168,76,0.1)"/>
+          <!-- Base -->
+          <line x1="130" y1="240" x2="190" y2="240" stroke="#C9A84C" stroke-width="2"/>
+          <line x1="140" y1="244" x2="180" y2="244" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+          <!-- Decorative inner dots -->
+          <circle cx="160" cy="60" r="2" fill="rgba(201,168,76,0.3)"/>
+          <circle cx="60" cy="160" r="2" fill="rgba(201,168,76,0.3)"/>
+          <circle cx="260" cy="160" r="2" fill="rgba(201,168,76,0.3)"/>
+          <circle cx="160" cy="260" r="2" fill="rgba(201,168,76,0.3)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>Jubilaciones</span>
+    <span>Pensiones</span>
+    <span>UCAP de ANSES</span>
+    <span>Reajustes</span>
+    <span>Derecho Previsional</span>
+    <span>Asesoría Legal</span>
+    <span>Jubilaciones</span>
+    <span>Pensiones</span>
+    <span>UCAP de ANSES</span>
+    <span>Reajustes</span>
+    <span>Derecho Previsional</span>
+    <span>Asesoría Legal</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="sobre-mi">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="section-label">Sobre mí</div>
+        <h2 class="section-title">Soledad Gartner</h2>
+        <p class="about-quote">Cada persona tiene derecho a una jubilación digna. Mi trabajo es asegurarme de que lo logres.</p>
+        <p class="about-text">Soy abogada especializada en derecho previsional, con amplia experiencia acompañando a trabajadores y futuros jubilados en la gestión de sus trámites ante ANSES y organismos previsionales.</p>
+        <p class="about-text">Mi enfoque es cercano y personalizado: analizo tu situación particular, te explico cada paso con claridad y te represento para que obtengas el mejor resultado posible.</p>
+      </div>
+      <div class="reveal">
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">+500</div>
+            <div class="stat-label">Consultas atendidas</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Casos resueltos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Compromiso</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="servicios">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Servicios</div>
+      <h2 class="section-title">Áreas de práctica</h2>
+      <p class="section-subtitle">Asesoramiento integral en materia previsional para que puedas acceder a tus derechos con tranquilidad y respaldo profesional.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="8" width="36" height="32" rx="2"/>
+          <line x1="12" y1="16" x2="36" y2="16"/>
+          <line x1="12" y1="22" x2="30" y2="22"/>
+          <line x1="12" y1="28" x2="26" y2="28"/>
+          <circle cx="36" cy="32" r="6" fill="none"/>
+          <path d="M34 32L36 34L39 30"/>
+        </svg>
+        <h3 class="service-name">Jubilaciones y Pensiones</h3>
+        <p class="service-desc">Tramitación completa de jubilaciones ordinarias, por invalidez y pensiones derivadas. Te guío desde el inicio hasta la resolución favorable.</p>
+      </div>
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M24 6L38 14V22C38 32 32 40 24 44C16 40 10 32 10 22V14L24 6Z"/>
+          <path d="M18 24L22 28L30 20"/>
+        </svg>
+        <h3 class="service-name">UCAP de ANSES</h3>
+        <p class="service-desc">Unidades de pago por adelantado para completar años de aportes faltantes. Te asesoro sobre elegibilidad, costos y el momento óptimo para realizarlo.</p>
+      </div>
+      <div class="service-card reveal">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M8 40V16L24 6L40 16V40"/>
+          <rect x="18" y="26" width="12" height="14"/>
+          <line x1="24" y1="26" x2="24" y2="40"/>
+          <rect x="14" y="18" width="6" height="6"/>
+          <rect x="28" y="18" width="6" height="6"/>
+        </svg>
+        <h3 class="service-name">Reajustes y Reclamos</h3>
+        <p class="service-desc">Demandas por reajuste de haberes jubilatorios, reclamos por mal cálculo del haber inicial y recursos ante resoluciones desfavorables.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UCAP HIGHLIGHT -->
+<section id="ucap" class="ucap-section">
+  <div class="section-inner">
+    <div class="ucap-grid">
+      <div class="reveal">
+        <div class="ucap-badge">Tema clave</div>
+        <h2 class="ucap-title">¿Te faltan años de aportes? Las UCAP pueden ser tu solución</h2>
+        <p class="ucap-text">Las Unidades de Pago de Aportes Complementarios (UCAP) de ANSES están pensadas para quienes todavía están en actividad y les faltan años de aportes para jubilarse — incluso hasta 10 años antes de la edad jubilatoria.</p>
+        <p class="ucap-text">Es una herramienta clave que muchas personas desconocen. Con el asesoramiento adecuado, podés planificar tu jubilación sin sorpresas.</p>
+      </div>
+      <div class="reveal">
+        <ul class="ucap-list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Completá tus años de aportes faltantes de manera legal y segura
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Disponible hasta 10 años antes de la edad jubilatoria
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Análisis personalizado del costo-beneficio según tu caso
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Acompañamiento en todo el proceso ante ANSES
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            Planificación anticipada para jubilarte sin demoras
+          </li>
+        </ul>
+        <a href="https://wa.me/543435020384?text=Hola%20Sol,%20quiero%20consultar%20sobre%20las%20UCAP" class="btn-primary" style="margin-top:32px;">Consultá sobre UCAP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="proceso">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Proceso</div>
+      <h2 class="section-title">¿Cómo trabajo?</h2>
+      <p class="section-subtitle">Un proceso claro y ordenado para que siempre sepas en qué etapa estás y qué esperar.</p>
+    </div>
+    <div class="how-timeline">
+      <div class="how-step reveal">
+        <div class="how-num">01</div>
+        <h3>Consulta inicial</h3>
+        <p>Analizamos tu situación previsional: años de aportes, edad, tipo de actividad y objetivos.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">02</div>
+        <h3>Diagnóstico</h3>
+        <p>Evalúo tus opciones y te presento un plan de acción concreto con plazos y costos estimados.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">03</div>
+        <h3>Gestión</h3>
+        <p>Me encargo de toda la tramitación, documentación y seguimiento ante los organismos correspondientes.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-num">04</div>
+        <h3>Resultado</h3>
+        <p>Obtenés tu beneficio jubilatorio con acompañamiento profesional de principio a fin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Contacto</div>
+      <h2 class="section-title">Hablemos sobre tu caso</h2>
+      <p class="section-subtitle">Podés escribirme por WhatsApp para una consulta rápida o completar el formulario para que me comunique con vos.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Teléfono / WhatsApp</div>
+            <div class="contact-value"><a href="https://wa.me/543435020384">343-5020384</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Estudio</div>
+            <div class="contact-value">Otto Sagemuller 1006, Planta Alta<br><span style="color:var(--gray);font-size:0.85rem;">Crespo, Entre Ríos</span></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <div class="contact-value"><a href="https://instagram.com/sol_gartner_" target="_blank">@sol_gartner_</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="tel" name="telefono" placeholder="Teléfono">
+          </div>
+          <input type="email" name="email" placeholder="Email">
+          <textarea name="mensaje" placeholder="Contame brevemente tu situación..." rows="5"></textarea>
+          <button type="submit" class="btn-primary">Enviar consulta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-copy">&copy; 2026 Soledad Gartner · Abogada. Todos los derechos reservados.</div>
+    <div class="footer-social">
+      <a href="https://instagram.com/sol_gartner_" target="_blank" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://wa.me/543435020384" aria-label="WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/543435020384?text=Hola%20Sol,%20quiero%20hacer%20una%20consulta" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+
+  // Close menu on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form handler (opens WA with message)
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const nombre = form.nombre.value;
+    const telefono = form.telefono.value;
+    const email = form.email.value;
+    const mensaje = form.mensaje.value;
+
+    let text = `Hola Sol, soy ${nombre}.`;
+    if (telefono) text += ` Mi tel: ${telefono}.`;
+    if (email) text += ` Mi email: ${email}.`;
+    if (mensaje) text += `\n\n${mensaje}`;
+
+    window.open(`https://wa.me/543435020384?text=${encodeURIComponent(text)}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
